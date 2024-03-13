@@ -1,14 +1,4 @@
 
-To get the default used embeddings model :
-
-### Install Git LFS
-git lfs install
-
-### Clone the repository
-git clone https://huggingface.co/intfloat/multilingual-e5-large
-
-
-
 #### To run everything:
 
 python version used: 3.11.5 (could work with less e.g 3.9)
