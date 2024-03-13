@@ -21,6 +21,7 @@ python version used: 3.11.5 (could work with less e.g 3.9)
 
 - Click "Browse Files" & pick PDF
 - Wait for the PDF to be loaded (animation top corner will say "Running" )
+- It might take a while for big files (±30 sec/ 1 MB, ±6 minutes / 6 MB)
 - Toast message will appear bottom right when over
 - Click "(X)" on the right of paper's name in order to continue (<b>IMPORTANT<b>)
 
