@@ -27,3 +27,8 @@ python version used: 3.11.5 (could work with less e.g 3.9)
 ### If you choose your own embeddings model, review average_pool() function from flask_litarature_review.py
 
 # Important: after you upload the file and you get a Toast with "File uploaded" -  you have to click on "(X)" on the right of the file in order to finish the upload and continue the QnA
+
+
+
+<img src="example.png" alt="example"/>
+### Target behvaior 
