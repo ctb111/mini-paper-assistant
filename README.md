@@ -1,10 +1,10 @@
 
 To get the default used embeddings model :
 
-# Install Git LFS
+### Install Git LFS
 git lfs install
 
-# Clone the repository
+### Clone the repository
 git clone https://huggingface.co/intfloat/multilingual-e5-large
 
 
@@ -24,6 +24,6 @@ Configurations in the config.json file:
 "vector_db_name": name for your chromadb persistent folder
 "top_k": number of chunks to be retrieved and used as context for the llm
 
-# If you choose your own embeddings model, review average_pool() function from flask_litarature_review.py
+### If you choose your own embeddings model, review average_pool() function from flask_litarature_review.py
 
-## Important: after you upload the file and you get a Tost with "File uploaded" -  you have to click on "(X)" on the right of the file in order to finish the upload and continue the QnA
+# Important: after you upload the file and you get a Tost with "File uploaded" -  you have to click on "(X)" on the right of the file in order to finish the upload and continue the QnA
