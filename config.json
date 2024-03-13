@@ -1,0 +1,10 @@
+{
+    "embeddings_model": "intfloat/multilingual-e5-large",
+    "max_chunk_size": 512,
+    "parser_chunk_overlap": 200,
+    "vector_db_name": "paper_store",
+    "top_k": 5,
+    "openai_key": "<not giving you me api key>"
+
+
+}
