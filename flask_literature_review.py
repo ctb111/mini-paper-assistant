@@ -71,6 +71,12 @@ def chroma_query_top_k(collection, embd, top_k=5):
 
 # Define chat chain
 template_prompt = """
+Here is an example of how you should respond. If the question has no answer in the context or is not directly answereable using the context, say you do not know the answer for the question
+User:
+
+Context [i]: <important information for answering the question> Source: <source of the information>
+Question: [question which answer needs to be taken from the context, along with the source]
+
 Use this context in order to answer the question:
 
 {context}
@@ -79,13 +85,8 @@ Question: {question}
 """
 
 template_system = """
-You a virtual assistant someone in a Stanford class. Answer in the same language the question is and only based on the following context.
-
-Here is an example of how you should respond. If the question has no answer in the context or is not directly answereable using the context, say you do not know the answer for the question
-User:
-
-Context [i]: <important information for answering the question> Source: <source of the information>
-Question: [question which answer needs to be taken from the context, along with the source]
+You are a virtual assistant for someone in a Stanford class. Answer only based on the context given to you and nothing else.
+If no context is provided, say you do not know the answer!
 
 """
 #model = ChatOpenAI()
@@ -164,13 +165,14 @@ def chat():
     end = time.time()
 
     print('Elapsed : ', end - start)
-    print(top_k_docs[-1])
-    context = ''
-    for idx, doc in enumerate(top_k_docs):
-        context += 'Context {} : {}'.format(idx, doc['document']) + \
-            "Source: document: {}, page: {}".format(doc['metadata']['source'], str(doc['metadata']['page'])) + "\n \n"
-    print(context)
-    print('Message: ', template_prompt.format(context=context, question=question))
+    print('Top k: ', top_k_docs)
+    context = 'No context given.'
+    if len(top_k_docs) > 0:
+        for idx, doc in enumerate(top_k_docs):
+            context += 'Context {} : {}'.format(idx, doc['document']) + \
+                "Source: document: {}, page: {}".format(doc['metadata']['source'], str(doc['metadata']['page'])) + "\n \n"
+        print(context)
+        print('Message: ', template_prompt.format(context=context, question=question))
 
 
     completion = client.chat.completions.create(
@@ -182,8 +184,8 @@ def chat():
     )
 
 
- 
-    return jsonify({"response": completion.choices[0].message.content})
+    response = completion.choices[0].message.content
+    return jsonify({"response": response})
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@
     "parser_chunk_overlap": 200,
     "vector_db_name": "paper_store",
     "top_k": 5,
-    "openai_key": "<not giving you me api key>"
+    "openai_key": "<openai_key"
 
 
 }
