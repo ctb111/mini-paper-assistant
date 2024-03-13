@@ -31,4 +31,3 @@ python version used: 3.11.5 (could work with less e.g 3.9)
 
 
 <img src="example.png" alt="example"/>
-### Target behvaior 
