@@ -9,6 +9,7 @@ python version used: 3.11.5 (could work with less e.g 3.9)
 
 - streamlit run literature_review_interface.py
 
+
 #### Configurations in the config.json file: 
 
 - "embeddings_model": Name of the embeddings model you want to load (in case you already use one)
@@ -16,6 +17,7 @@ python version used: 3.11.5 (could work with less e.g 3.9)
 - "parser_chunk_overlap": How many tokens to overlap when processing the data
 - "vector_db_name": name for your chromadb persistent folder
 - "top_k": number of chunks to be retrieved and used as context for the llm
+- "openai_key": OPENAI KEY
 
 ### In order to add a PDF paper:
 
